@@ -22,13 +22,14 @@ const LanguageWrapper = ({ children }) => {
 
   return children;
 };
+const basename = process.env.NODE_ENV === "production" ? "/web-static" : "/";
 function App() {
   return (
     // <div className="container mt-5">
     //   <h1 className="text-primary">Hello, Bootstrap with Vite!</h1>
     //   <button className="btn btn-success">Click Me</button>
     // </div>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Navbar />
       <LanguageWrapper>
       <Routes>
